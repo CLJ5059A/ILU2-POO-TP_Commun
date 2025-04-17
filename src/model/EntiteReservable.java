@@ -1,6 +1,6 @@
 package model;
 
-public abstract class EntiteReservable<P extends Formulaire> {
+public abstract class EntiteReservable<F extends Formulaire> {
 	private int numero;
 	private CalendrierAnnuel calendrierPerso = new CalendrierAnnuel();
 	
@@ -12,13 +12,13 @@ public abstract class EntiteReservable<P extends Formulaire> {
 		this.numero = numero;
 	}
 	
-	public boolean estLibre(P formulaire) {
+	public boolean estLibre(F formulaire) {
 		int jour = formulaire.getJour();
 		int mois = formulaire.getMois();
 		return calendrierPerso.estLibre(jour, mois);
 	}
 	
-	public abstract boolean compatible(P formulaire);
+	public abstract boolean compatible(F formulaire);
 	
-	public abstract Reservation reserver(P formulaire);
+	public abstract Reservation reserver(F formulaire);
 }

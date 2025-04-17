@@ -1,15 +1,14 @@
 package model;
 
-public class CentraleReservation<P extends Formulaire> {
-	private EntiteReservable<P>[] entitesReservables;
-	private int nbEntitesReservables;
+public class CentraleReservation<E extends EntiteReservable,F extends Formulaire> {
+	private E[] entites;
+	private int nbEntites = 0;
 	
-	public CentraleReservation(EntiteReservable<P>[] entitesReservables) {
-		this.entitesReservables = entitesReservables;
-		this.nbEntitesReservables = entitesReservables.length;
+	public CentraleReservation(E[] entites) {
+		this.entites = entites;
 	}
 	
-	public void ajouterEntite(EntiteReservable<P> newEntite) {
+	public void ajouterEntite(E newEntite) {
 		
 	}
 }
